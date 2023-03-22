@@ -62,7 +62,7 @@ function Resposta(){
     let texto1 = document.querySelector('.scoreArea .scoreText1')
     let texto2 = document.querySelector('.scoreArea .scoreText2')
     let score = document.querySelector('.scoreArea .scorePct')
-    console.log(soma,questions.length /2)
+    
     if(soma > questions.length /2){
         texto1.innerHTML = 'Parabéns!';
        
