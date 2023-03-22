@@ -1,4 +1,3 @@
-
 let CurrentQuestion = 0;
 var answer_user = [];
 
@@ -60,14 +59,22 @@ function Resposta(){
     })
     document.querySelector('.questionArea').style.display = 'none';
     document.querySelector('.scoreArea').style.display = 'block';
-    let texto1 = document.querySelector('.scoreArea .scoreText1').innerHTML
-    let texto2 = document.querySelector('.scoreArea .scoreText2').innerHTML
-    let score = document.querySelector('.scoreArea .scorePct').innerHTML
+    let texto1 = document.querySelector('.scoreArea .scoreText1')
+    let texto2 = document.querySelector('.scoreArea .scoreText2')
+    let score = document.querySelector('.scoreArea .scorePct')
+    console.log(soma,questions.length /2)
     if(soma > questions.length /2){
-        texto1 = 'Parabéns!';
-        score = `${(soma/100) * questions}%`
+        texto1.innerHTML = 'Parabéns!';
+       
 
     }
+    else{
+        texto1.innerHTML = 'Vamos melhorar né?';     
+        score.style.color = 'red'   ;
+        
+    }
+    score.innerHTML = `Acertou ${(soma*100) / questions.length}%!!!`
+    texto2.innerHTML = `Você acertou ${soma} e errou ${questions.length - soma}`
     document.querySelector('button').addEventListener('click',()=>{
         CurrentQuestion = 0;
         answer_user = [];
